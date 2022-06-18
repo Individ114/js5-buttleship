@@ -44,6 +44,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .p1 {
   font-size: 30px;
   position: relative;
@@ -215,6 +221,112 @@ body {
   font-size: 15px;
   color: black;
 }
+.p8 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
+.p8::before {
+  content: "2";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translate(0, 50%);
+  font-size: 15px;
+  color: black;
+}
+.p9 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
+.p10 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+.p11 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+.p12 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
+.p13 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
+.p14 {
+  font-size: 30px;
+  position: relative;
+  color: rgb(255, 0, 0);
+  background-color: rgba(143, 201, 255, 0.507);
+  border: 1px solid rgba(0, 89, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
 .info {
   margin-top: 30px;
   display: flex;
