@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="jquery.js"></script>
-    <title>buttle ship</title>
+    <title>BUTTLESHIP</title>
   </head>
   <body>
     <div class="wrapper">
@@ -16,7 +16,7 @@
         <p>
           Вам предстоит подбить трёхпалубный авианосец не имея точной навигации.
           <br />
-          У вас всего 4 выстрела.
+          У вас всего 6 снарядов.
           <br />
           Аккуратно кликайте, помните про ограничение.
           <br />
@@ -37,176 +37,407 @@
         <p class="p6" id="p6Id"></p>
         <p class="p7" id="p7Id"></p>
       </div>
+      <div class="container2">
+        <p class="p8" id="p8Id"></p>
+        <p class="p9" id="p9Id"></p>
+        <p class="p10" id="p10Id"></p>
+        <p class="p11" id="p11Id"></p>
+        <p class="p12" id="p12Id"></p>
+        <p class="p13" id="p13Id"></p>
+        <p class="p14" id="p14Id"></p>
+      </div>
       <div class="inform">
         РУБКА:&nbsp;
         <span class="rubka" id="rubkaId"
-          >У нас есть 4 снаряда. Команда верит в тебя, капитан!</span
+          >У нас есть 6 снарядов. Команда верит в тебя, капитан!</span
         >
       </div>
       <script>
-        var shipArray = [
-          ["1", "2", "3"],
-          ["2", "3", "4"],
-          ["3", "4", "5"],
-          ["4", "5", "6"],
-          ["5", "6", "7"],
-        ];
-        function shipRandom() {
-          return shipArray[Math.floor(Math.random() * shipArray.length)];
+        function numberRandomFunc() {
+          return Math.floor(Math.random() * 12);
         }
-        var ship = shipRandom();
-        var hit = 0;
-        var miss = 0;
-        var attempt = 4;
+        function shipRandomFunc(numberRandom) {
+          var x = [];
+          x.push(String(numberRandom + 1));
+          x.push(String(numberRandom + 2));
+          x.push(String(numberRandom + 3));
+          return x;
+        }
 
+        var numberRandom = numberRandomFunc();
+        var ship = shipRandomFunc(numberRandom);
         console.log(ship);
+        var attempt = 6;
+        var y = [];
+        var hits = 0;
+
+        function process(p00) {
+          attempt--;
+          for (var i = 0; i < y.length; i++) {
+            if (y[i] === p00) {
+              var miss = 1;
+            } else {
+              var miss = 0;
+            }
+          }
+          y.push(p00);
+          if (miss === 1) {
+            $("#rubkaId").text(
+              "Мимо. Вы уже сюда били. Осталось снарядов: " + attempt
+            );
+            if (attempt <= 0) {
+              $("#rubkaId").text(
+                "Проигрыш! Игра перезапуститься через 5 секунд."
+              );
+              setTimeout(function () {
+                location.reload(true);
+              }, 5000);
+            }
+          } else if (ship[0] === p00 || ship[1] === p00 || ship[2] === p00) {
+            $("#rubkaId").text("Попал! Осталось снарядов: " + attempt);
+            hits++;
+            if (attempt <= 0) {
+              $("#rubkaId").text(
+                "Проигрыш! Игра перезапуститься через 5 секунд."
+              );
+              setTimeout(function () {
+                location.reload(true);
+              }, 5000);
+            }
+            if (hits === 3) {
+              $("#rubkaId").text(
+                "Победа! Игра перезапуститься через 5 секунд."
+              );
+              setTimeout(function () {
+                location.reload(true);
+              }, 5000);
+            }
+            if (p00 === "1") {
+              $("#p1Id").text("X");
+            }
+            if (p00 === "2") {
+              $("#p2Id").text("X");
+            }
+            if (p00 === "3") {
+              $("#p3Id").text("X");
+            }
+            if (p00 === "4") {
+              $("#p4Id").text("X");
+            }
+            if (p00 === "5") {
+              $("#p5Id").text("X");
+            }
+            if (p00 === "6") {
+              $("#p6Id").text("X");
+            }
+            if (p00 === "7") {
+              $("#p7Id").text("X");
+            }
+            if (p00 === "8") {
+              $("#p8Id").text("X");
+            }
+            if (p00 === "9") {
+              $("#p9Id").text("X");
+            }
+            if (p00 === "10") {
+              $("#p10Id").text("X");
+            }
+            if (p00 === "11") {
+              $("#p11Id").text("X");
+            }
+            if (p00 === "12") {
+              $("#p12Id").text("X");
+            }
+            if (p00 === "13") {
+              $("#p13Id").text("X");
+            }
+            if (p00 === "14") {
+              $("#p14Id").text("X");
+            }
+          } else {
+            $("#rubkaId").text("Мимо! Осталось снарядов: " + attempt);
+
+            if (hits === 3) {
+              $("#rubkaId").text(
+                "Победа! Игра перезапуститься через 5 секунд."
+              );
+              setTimeout(function () {
+                location.reload(true);
+              }, 5000);
+            }
+            if (attempt <= 0) {
+              $("#rubkaId").text(
+                "Проигрыш! Игра перезапуститься через 5 секунд."
+              );
+              setTimeout(function () {
+                location.reload(true);
+              }, 5000);
+            }
+            if (p00 === "1") {
+              $("#p1Id").text("—");
+            }
+            if (p00 === "2") {
+              $("#p2Id").text("—");
+            }
+            if (p00 === "3") {
+              $("#p3Id").text("—");
+            }
+            if (p00 === "4") {
+              $("#p4Id").text("—");
+            }
+            if (p00 === "5") {
+              $("#p5Id").text("—");
+            }
+            if (p00 === "6") {
+              $("#p6Id").text("—");
+            }
+            if (p00 === "7") {
+              $("#p7Id").text("—");
+            }
+            if (p00 === "8") {
+              $("#p8Id").text("—");
+            }
+            if (p00 === "9") {
+              $("#p9Id").text("—");
+            }
+            if (p00 === "10") {
+              $("#p10Id").text("—");
+            }
+            if (p00 === "11") {
+              $("#p11Id").text("—");
+            }
+            if (p00 === "12") {
+              $("#p12Id").text("—");
+            }
+            if (p00 === "13") {
+              $("#p13Id").text("—");
+            }
+            if (p00 === "14") {
+              $("#p14Id").text("—");
+            }
+          }
+        }
 
         $("#p1Id").click(function () {
-          if (ship === shipArray[0]) {
-            $("#p1Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "1";
+          process(p00);
         });
         $("#p2Id").click(function () {
-          if (ship === shipArray[0] || ship === shipArray[1]) {
-            $("#p2Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "2";
+          process(p00);
         });
         $("#p3Id").click(function () {
-          if (
-            ship === shipArray[0] ||
-            ship === shipArray[1] ||
-            ship === shipArray[2]
-          ) {
-            $("#p3Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "3";
+          process(p00);
         });
         $("#p4Id").click(function () {
-          if (
-            ship === shipArray[1] ||
-            ship === shipArray[2] ||
-            ship === shipArray[3]
-          ) {
-            $("#p4Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-            console.log("attempt" + attempt);
-            console.log("hit" + hit);
-            console.log("miss" + miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "4";
+          process(p00);
         });
         $("#p5Id").click(function () {
-          if (
-            ship === shipArray[2] ||
-            ship === shipArray[3] ||
-            ship === shipArray[4]
-          ) {
-            $("#p5Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "5";
+          process(p00);
         });
         $("#p6Id").click(function () {
-          if (ship === shipArray[3] || ship === shipArray[4]) {
-            $("#p6Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "6";
+          process(p00);
         });
         $("#p7Id").click(function () {
-          if (ship === shipArray[4]) {
-            $("#p7Id").text("X");
-            hit++;
-            attempt--;
-            var progress = rubkaFunc(attempt, hit, miss);
-          } else {
-            attempt--;
-            miss++;
-
-            var progress = rubkaFunc(attempt, hit, miss);
-          }
+          p00 = "7";
+          process(p00);
         });
+        $("#p8Id").click(function () {
+          p00 = "8";
+          process(p00);
+        });
+        $("#p9Id").click(function () {
+          p00 = "9";
+          process(p00);
+        });
+        $("#p10Id").click(function () {
+          p00 = "10";
+          process(p00);
+        });
+        $("#p11Id").click(function () {
+          p00 = "11";
+          process(p00);
+        });
+        $("#p12Id").click(function () {
+          p00 = "12";
+          process(p00);
+        });
+        $("#p13Id").click(function () {
+          p00 = "13";
+          process(p00);
+        });
+        $("#p14Id").click(function () {
+          p00 = "14";
+          process(p00);
+        });
+        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // var shipArray = [
+        //   ["1", "2", "3"],
+        //   ["2", "3", "4"],
+        //   ["3", "4", "5"],
+        //   ["4", "5", "6"],
+        //   ["5", "6", "7"],
+        // ];
+        // function shipRandom() {
+        //   return shipArray[Math.floor(Math.random() * shipArray.length)];
+        // }
+        // var ship = shipRandom();
+        // var hit = 0;
+        // var miss = 0;
+        // var attempt = 4;
 
-        console.log("attempt" + attempt);
-        console.log("hit" + hit);
-        console.log("miss" + miss);
+        // console.log(ship);
 
-        var clich = 0;
+        // $("#p1Id").click(function () {
+        //   if (ship === shipArray[0]) {
+        //     $("#p1Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p2Id").click(function () {
+        //   if (ship === shipArray[0] || ship === shipArray[1]) {
+        //     $("#p2Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
 
-        function rubkaFunc(attempt, hit, miss) {
-          if (hit === 1 && clich === 0 && attempt > 0) {
-            $("#rubkaId").text(
-              "Попали! Враг обнаружен! Осталось выстрелов: " + attempt
-            );
-            clich += 1;
-          } else if (hit === 2 && clich === 1 && attempt > 0) {
-            $("#rubkaId").text(
-              "Есть попадание! Вы сегодня в ударе! Осталось выстрелов: " +
-                attempt
-            );
-            clich += 1;
-          } else if (hit === 3 && attempt >= 0) {
-            $("#rubkaId").text(
-              "Полундра! Враг повержен. Всем рома! Игра перезапустится через 5 секунд."
-            );
-            setTimeout(function () {
-              location.reload(true);
-            }, 5000);
-          } else if (
-            (miss === 1 && attempt > 0) ||
-            (miss === 2 && attempt > 0) ||
-            (miss === 3 && attempt > 0)
-          ) {
-            $("#rubkaId").text("Мимо! Осталось выстрелов: " + attempt);
-          } else if (attempt === 0) {
-            $("#rubkaId").text(
-              "Полундра! В нас стреляют! Все за борт! Игра перезапустится через 5 секунд."
-            );
-            setTimeout(function () {
-              location.reload(true);
-            }, 5000);
-          }
-        }
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p3Id").click(function () {
+        //   if (
+        //     ship === shipArray[0] ||
+        //     ship === shipArray[1] ||
+        //     ship === shipArray[2]
+        //   ) {
+        //     $("#p3Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p4Id").click(function () {
+        //   if (
+        //     ship === shipArray[1] ||
+        //     ship === shipArray[2] ||
+        //     ship === shipArray[3]
+        //   ) {
+        //     $("#p4Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //     console.log("attempt" + attempt);
+        //     console.log("hit" + hit);
+        //     console.log("miss" + miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p5Id").click(function () {
+        //   if (
+        //     ship === shipArray[2] ||
+        //     ship === shipArray[3] ||
+        //     ship === shipArray[4]
+        //   ) {
+        //     $("#p5Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p6Id").click(function () {
+        //   if (ship === shipArray[3] || ship === shipArray[4]) {
+        //     $("#p6Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+        // $("#p7Id").click(function () {
+        //   if (ship === shipArray[4]) {
+        //     $("#p7Id").text("X");
+        //     hit++;
+        //     attempt--;
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   } else {
+        //     attempt--;
+        //     miss++;
+
+        //     var progress = rubkaFunc(attempt, hit, miss);
+        //   }
+        // });
+
+        // console.log("attempt" + attempt);
+        // console.log("hit" + hit);
+        // console.log("miss" + miss);
+
+        // var clich = 0;
+
+        // function rubkaFunc(attempt, hit, miss) {
+        //   if (hit === 1 && clich === 0 && attempt > 0) {
+        //     $("#rubkaId").text(
+        //       "Попали! Враг обнаружен! Осталось выстрелов: " + attempt
+        //     );
+        //     clich += 1;
+        //   } else if (hit === 2 && clich === 1 && attempt > 0) {
+        //     $("#rubkaId").text(
+        //       "Есть попадание! Вы сегодня в ударе! Осталось выстрелов: " +
+        //         attempt
+        //     );
+        //     clich += 1;
+        //   } else if (hit === 3 && attempt >= 0) {
+        //     $("#rubkaId").text(
+        //       "Полундра! Враг повержен. Всем рома! Игра перезапустится через 5 секунд."
+        //     );
+        //     setTimeout(function () {
+        //       location.reload(true);
+        //     }, 5000);
+        //   } else if (
+        //     (miss === 1 && attempt > 0) ||
+        //     (miss === 2 && attempt > 0) ||
+        //     (miss === 3 && attempt > 0)
+        //   ) {
+        //     $("#rubkaId").text("Мимо! Осталось выстрелов: " + attempt);
+        //   } else if (attempt === 0) {
+        //     $("#rubkaId").text(
+        //       "Полундра! В нас стреляют! Все за борт! Игра перезапустится через 5 секунд."
+        //     );
+        //     setTimeout(function () {
+        //       location.reload(true);
+        //     }, 5000);
+        //   }
+        // }
 
         // var xxxFunc = function (guess) {
         //   if (guess === "1") {
