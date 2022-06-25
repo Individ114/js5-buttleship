@@ -31,12 +31,14 @@ body {
 }
 @media (max-width: 320px) {
       .wrapper {
-            background: url(img/fon.jpg) 30% 100% / cover no-repeat;
+            background: url(img/fon.jpg) 100% 100% / cover no-repeat;
       }
 }
 .img-logo {
       display: flex;
       justify-content: center;
+      width: 80%;
+      margin: 0 auto;
       padding-top: 20px;
 }
 .img-logo img {
@@ -453,7 +455,7 @@ body {
 }
 
 .info {
-      margin-top: 30px;
+      margin-top: 10px;
       display: flex;
       justify-content: center;
       text-align: center;
