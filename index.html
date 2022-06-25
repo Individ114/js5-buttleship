@@ -1,501 +1,976 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="jquery.js"></script>
-    <title>BUTTLESHIP</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="img-logo"><img src="img/logo.png" alt="" /></div>
+      <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+            />
+            <link rel="stylesheet" href="style.css" />
+            <script src="jquery.js"></script>
+            <title>BUTTLESHIP</title>
+      </head>
+      <body>
+            <div class="wrapper">
+                  <div class="img-logo"><img src="img/logo.png" alt="" /></div>
 
-      <div class="info">
-        <p>
-          Вам предстоит подбить трёхпалубный авианосец не имея точной навигации.
-          <br />
-          У вас всего 6 снарядов.
-          <br />
-          Аккуратно кликайте, помните про ограничение.
-          <br />
-          Удачи!
-          <br />
-          <span></span>
-        </p>
-      </div>
-      <!-- <div class="button" id="buttonId">
+                  <div class="info">
+                        <p>
+                              Вам предстоит подбить трёхпалубный авианосец не
+                              имея точной навигации.
+                              <br />
+                              У вас всего 20 снарядов.
+                              <br />
+                              Аккуратно кликайте, помните про ограничение.
+                              <br />
+                              Удачи!
+                              <br />
+                              <span></span>
+                        </p>
+                  </div>
+                  <!-- <div class="button" id="buttonId">
       <p>Начать бой</p>
     </div> -->
-      <div class="container">
-        <p class="p1" id="p1Id"></p>
-        <p class="p2" id="p2Id"></p>
-        <p class="p3" id="p3Id"></p>
-        <p class="p4" id="p4Id"></p>
-        <p class="p5" id="p5Id"></p>
-        <p class="p6" id="p6Id"></p>
-        <p class="p7" id="p7Id"></p>
-      </div>
-      <div class="container2">
-        <p class="p8" id="p8Id"></p>
-        <p class="p9" id="p9Id"></p>
-        <p class="p10" id="p10Id"></p>
-        <p class="p11" id="p11Id"></p>
-        <p class="p12" id="p12Id"></p>
-        <p class="p13" id="p13Id"></p>
-        <p class="p14" id="p14Id"></p>
-      </div>
-      <div class="inform">
-        РУБКА:&nbsp;
-        <span class="rubka" id="rubkaId"
-          >У нас есть 6 снарядов. Команда верит в тебя, капитан!</span
-        >
-      </div>
-      <script>
-        function numberRandomFunc() {
-          return Math.floor(Math.random() * 12);
-        }
-        function shipRandomFunc(numberRandom) {
-          var x = [];
-          x.push(String(numberRandom + 1));
-          x.push(String(numberRandom + 2));
-          x.push(String(numberRandom + 3));
-          return x;
-        }
+                  <div class="container">
+                        <p class="p1" id="p1Id"></p>
+                        <p class="p2" id="p2Id"></p>
+                        <p class="p3" id="p3Id"></p>
+                        <p class="p4" id="p4Id"></p>
+                        <p class="p5" id="p5Id"></p>
+                        <p class="p6" id="p6Id"></p>
+                        <p class="p7" id="p7Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p8" id="p8Id"></p>
+                        <p class="p9" id="p9Id"></p>
+                        <p class="p10" id="p10Id"></p>
+                        <p class="p11" id="p11Id"></p>
+                        <p class="p12" id="p12Id"></p>
+                        <p class="p13" id="p13Id"></p>
+                        <p class="p14" id="p14Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p83" id="p15Id"></p>
+                        <p class="p9" id="p16Id"></p>
+                        <p class="p10" id="p17Id"></p>
+                        <p class="p11" id="p18Id"></p>
+                        <p class="p12" id="p19Id"></p>
+                        <p class="p13" id="p20Id"></p>
+                        <p class="p14" id="p21Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p84" id="p22Id"></p>
+                        <p class="p9" id="p23Id"></p>
+                        <p class="p10" id="p24Id"></p>
+                        <p class="p11" id="p25Id"></p>
+                        <p class="p12" id="p26Id"></p>
+                        <p class="p13" id="p27Id"></p>
+                        <p class="p14" id="p28Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p85" id="p29Id"></p>
+                        <p class="p9" id="p30Id"></p>
+                        <p class="p10" id="p31Id"></p>
+                        <p class="p11" id="p32Id"></p>
+                        <p class="p12" id="p33Id"></p>
+                        <p class="p13" id="p34Id"></p>
+                        <p class="p14" id="p35Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p86" id="p36Id"></p>
+                        <p class="p9" id="p37Id"></p>
+                        <p class="p10" id="p38Id"></p>
+                        <p class="p11" id="p39Id"></p>
+                        <p class="p12" id="p40Id"></p>
+                        <p class="p13" id="p41Id"></p>
+                        <p class="p14" id="p42Id"></p>
+                  </div>
+                  <div class="container2">
+                        <p class="p87" id="p43Id"></p>
+                        <p class="p9" id="p44Id"></p>
+                        <p class="p10" id="p45Id"></p>
+                        <p class="p11" id="p46Id"></p>
+                        <p class="p12" id="p47Id"></p>
+                        <p class="p13" id="p48Id"></p>
+                        <p class="p14" id="p49Id"></p>
+                  </div>
+                  <div class="inform">
+                        РУБКА:&nbsp;
+                        <span class="rubka" id="rubkaId"
+                              >У нас есть 20 снарядов. Команда верит в вас,
+                              капитан!</span
+                        >
+                  </div>
+                  <script>
+                        var area1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+                        var area2 = [
+                              15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+                        ];
+                        var area3 = [
+                              29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+                              41, 42, 43, 44, 45, 46, 47,
+                        ];
+                        function numberRandom1Func() {
+                              return area1[Math.floor(Math.random() * 12)];
+                        }
+                        function numberRandom2Func() {
+                              return area2[Math.floor(Math.random() * 12)];
+                        }
+                        function numberRandom3Func() {
+                              return area3[Math.floor(Math.random() * 19)];
+                        }
 
-        var numberRandom = numberRandomFunc();
-        var ship = shipRandomFunc(numberRandom);
-        console.log(ship);
-        var attempt = 6;
-        var y = [];
-        var hits = 0;
+                        function shipRandomFunc(
+                              numberRandomHorizont,
+                              numberRandomVartikal
+                        ) {
+                              var x = [];
+                              x.push(String(numberRandom1 + 0));
+                              x.push(String(numberRandom1 + 1));
+                              x.push(String(numberRandom1 + 2));
 
-        function process(p00) {
-          attempt--;
-          for (var i = 0; i < y.length; i++) {
-            if (y[i] === p00) {
-              var miss = 1;
-            } else {
-              var miss = 0;
-            }
-          }
-          y.push(p00);
-          if (miss === 1) {
-            $("#rubkaId").text(
-              "Мимо. Вы уже сюда били. Осталось снарядов: " + attempt
-            );
-            if (attempt <= 0) {
-              $("#rubkaId").text(
-                "Проигрыш! Игра перезапуститься через 5 секунд."
-              );
-              setTimeout(function () {
-                location.reload(true);
-              }, 5000);
-            }
-          } else if (ship[0] === p00 || ship[1] === p00 || ship[2] === p00) {
-            $("#rubkaId").text("Попал! Осталось снарядов: " + attempt);
-            hits++;
-            if (attempt <= 0) {
-              $("#rubkaId").text(
-                "Проигрыш! Игра перезапуститься через 5 секунд."
-              );
-              setTimeout(function () {
-                location.reload(true);
-              }, 5000);
-            }
-            if (hits === 3) {
-              $("#rubkaId").text(
-                "Победа! Игра перезапуститься через 5 секунд."
-              );
-              setTimeout(function () {
-                location.reload(true);
-              }, 5000);
-            }
-            if (p00 === "1") {
-              $("#p1Id").text("X");
-            }
-            if (p00 === "2") {
-              $("#p2Id").text("X");
-            }
-            if (p00 === "3") {
-              $("#p3Id").text("X");
-            }
-            if (p00 === "4") {
-              $("#p4Id").text("X");
-            }
-            if (p00 === "5") {
-              $("#p5Id").text("X");
-            }
-            if (p00 === "6") {
-              $("#p6Id").text("X");
-            }
-            if (p00 === "7") {
-              $("#p7Id").text("X");
-            }
-            if (p00 === "8") {
-              $("#p8Id").text("X");
-            }
-            if (p00 === "9") {
-              $("#p9Id").text("X");
-            }
-            if (p00 === "10") {
-              $("#p10Id").text("X");
-            }
-            if (p00 === "11") {
-              $("#p11Id").text("X");
-            }
-            if (p00 === "12") {
-              $("#p12Id").text("X");
-            }
-            if (p00 === "13") {
-              $("#p13Id").text("X");
-            }
-            if (p00 === "14") {
-              $("#p14Id").text("X");
-            }
-          } else {
-            $("#rubkaId").text("Мимо! Осталось снарядов: " + attempt);
+                              x.push(String(numberRandom2 + 0));
+                              x.push(String(numberRandom2 + 1));
+                              x.push(String(numberRandom2 + 2));
 
-            if (hits === 3) {
-              $("#rubkaId").text(
-                "Победа! Игра перезапуститься через 5 секунд."
-              );
-              setTimeout(function () {
-                location.reload(true);
-              }, 5000);
-            }
-            if (attempt <= 0) {
-              $("#rubkaId").text(
-                "Проигрыш! Игра перезапуститься через 5 секунд."
-              );
-              setTimeout(function () {
-                location.reload(true);
-              }, 5000);
-            }
-            if (p00 === "1") {
-              $("#p1Id").text("—");
-            }
-            if (p00 === "2") {
-              $("#p2Id").text("—");
-            }
-            if (p00 === "3") {
-              $("#p3Id").text("—");
-            }
-            if (p00 === "4") {
-              $("#p4Id").text("—");
-            }
-            if (p00 === "5") {
-              $("#p5Id").text("—");
-            }
-            if (p00 === "6") {
-              $("#p6Id").text("—");
-            }
-            if (p00 === "7") {
-              $("#p7Id").text("—");
-            }
-            if (p00 === "8") {
-              $("#p8Id").text("—");
-            }
-            if (p00 === "9") {
-              $("#p9Id").text("—");
-            }
-            if (p00 === "10") {
-              $("#p10Id").text("—");
-            }
-            if (p00 === "11") {
-              $("#p11Id").text("—");
-            }
-            if (p00 === "12") {
-              $("#p12Id").text("—");
-            }
-            if (p00 === "13") {
-              $("#p13Id").text("—");
-            }
-            if (p00 === "14") {
-              $("#p14Id").text("—");
-            }
-          }
-        }
+                              x.push(String(numberRandom3 + 0));
+                              x.push(String(numberRandom3 + 1));
+                              x.push(String(numberRandom3 + 2));
 
-        $("#p1Id").click(function () {
-          p00 = "1";
-          process(p00);
-        });
-        $("#p2Id").click(function () {
-          p00 = "2";
-          process(p00);
-        });
-        $("#p3Id").click(function () {
-          p00 = "3";
-          process(p00);
-        });
-        $("#p4Id").click(function () {
-          p00 = "4";
-          process(p00);
-        });
-        $("#p5Id").click(function () {
-          p00 = "5";
-          process(p00);
-        });
-        $("#p6Id").click(function () {
-          p00 = "6";
-          process(p00);
-        });
-        $("#p7Id").click(function () {
-          p00 = "7";
-          process(p00);
-        });
-        $("#p8Id").click(function () {
-          p00 = "8";
-          process(p00);
-        });
-        $("#p9Id").click(function () {
-          p00 = "9";
-          process(p00);
-        });
-        $("#p10Id").click(function () {
-          p00 = "10";
-          process(p00);
-        });
-        $("#p11Id").click(function () {
-          p00 = "11";
-          process(p00);
-        });
-        $("#p12Id").click(function () {
-          p00 = "12";
-          process(p00);
-        });
-        $("#p13Id").click(function () {
-          p00 = "13";
-          process(p00);
-        });
-        $("#p14Id").click(function () {
-          p00 = "14";
-          process(p00);
-        });
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // var shipArray = [
-        //   ["1", "2", "3"],
-        //   ["2", "3", "4"],
-        //   ["3", "4", "5"],
-        //   ["4", "5", "6"],
-        //   ["5", "6", "7"],
-        // ];
-        // function shipRandom() {
-        //   return shipArray[Math.floor(Math.random() * shipArray.length)];
-        // }
-        // var ship = shipRandom();
-        // var hit = 0;
-        // var miss = 0;
-        // var attempt = 4;
+                              return x;
+                        }
 
-        // console.log(ship);
+                        var numberRandom1 = numberRandom1Func();
+                        var numberRandom2 = numberRandom2Func();
+                        var numberRandom3 = numberRandom3Func();
+                        var ship = shipRandomFunc(
+                              numberRandom1,
+                              numberRandom2,
+                              numberRandom3
+                        );
+                        console.log(ship);
+                        var attempt = 20;
+                        var y = [];
+                        var hits = 0;
+                        var miss = 2;
 
-        // $("#p1Id").click(function () {
-        //   if (ship === shipArray[0]) {
-        //     $("#p1Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p2Id").click(function () {
-        //   if (ship === shipArray[0] || ship === shipArray[1]) {
-        //     $("#p2Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                        function process(p00) {
+                              attempt--;
+                              for (var i = 0; i < y.length; i++) {
+                                    if (y[i] === p00) {
+                                          miss = 1;
+                                          console.log(y + " y");
+                                    }
+                              }
+                              y.push(p00);
+                              console.log(y);
+                              console.log(miss);
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p3Id").click(function () {
-        //   if (
-        //     ship === shipArray[0] ||
-        //     ship === shipArray[1] ||
-        //     ship === shipArray[2]
-        //   ) {
-        //     $("#p3Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                              if (hits === 9) {
+                                    alert(
+                                          `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
+                                    );
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p4Id").click(function () {
-        //   if (
-        //     ship === shipArray[1] ||
-        //     ship === shipArray[2] ||
-        //     ship === shipArray[3]
-        //   ) {
-        //     $("#p4Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //     console.log("attempt" + attempt);
-        //     console.log("hit" + hit);
-        //     console.log("miss" + miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                                    location.reload(true);
+                              } else if (miss === 1) {
+                                    $("#rubkaId").text(
+                                          "Мимо. Вы уже сюда били. Осталось снарядов: " +
+                                                attempt
+                                    );
+                                    miss += 1;
+                                    // if (attempt <= 0) {
+                                    //       $("#rubkaId").text("Проигрыш!");
+                                    //       alert(
+                                    //             `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                    //       );
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p5Id").click(function () {
-        //   if (
-        //     ship === shipArray[2] ||
-        //     ship === shipArray[3] ||
-        //     ship === shipArray[4]
-        //   ) {
-        //     $("#p5Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                                    //       location.reload(true);
+                                    // }
+                              } else if (
+                                    ship[0] === p00 ||
+                                    ship[1] === p00 ||
+                                    ship[2] === p00 ||
+                                    ship[3] === p00 ||
+                                    ship[4] === p00 ||
+                                    ship[5] === p00 ||
+                                    ship[6] === p00 ||
+                                    ship[7] === p00 ||
+                                    ship[8] === p00
+                              ) {
+                                    $("#rubkaId").text(
+                                          "Попал! Осталось снарядов: " + attempt
+                                    );
+                                    hits++;
+                                    // if (attempt <= 0) {
+                                    //       $("#rubkaId").text(
+                                    //             `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                    //       );
+                                    //       alert(
+                                    //             `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                    //       );
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p6Id").click(function () {
-        //   if (ship === shipArray[3] || ship === shipArray[4]) {
-        //     $("#p6Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                                    //       location.reload(true);
+                                    // }
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
-        // $("#p7Id").click(function () {
-        //   if (ship === shipArray[4]) {
-        //     $("#p7Id").text("X");
-        //     hit++;
-        //     attempt--;
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   } else {
-        //     attempt--;
-        //     miss++;
+                                    if (p00 === "1") {
+                                          $("#p1Id").text("X");
+                                    }
+                                    if (p00 === "2") {
+                                          $("#p2Id").text("X");
+                                    }
+                                    if (p00 === "3") {
+                                          $("#p3Id").text("X");
+                                    }
+                                    if (p00 === "4") {
+                                          $("#p4Id").text("X");
+                                    }
+                                    if (p00 === "5") {
+                                          $("#p5Id").text("X");
+                                    }
+                                    if (p00 === "6") {
+                                          $("#p6Id").text("X");
+                                    }
+                                    if (p00 === "7") {
+                                          $("#p7Id").text("X");
+                                    }
+                                    if (p00 === "8") {
+                                          $("#p8Id").text("X");
+                                    }
+                                    if (p00 === "9") {
+                                          $("#p9Id").text("X");
+                                    }
+                                    if (p00 === "10") {
+                                          $("#p10Id").text("X");
+                                    }
+                                    if (p00 === "11") {
+                                          $("#p11Id").text("X");
+                                    }
+                                    if (p00 === "12") {
+                                          $("#p12Id").text("X");
+                                    }
+                                    if (p00 === "13") {
+                                          $("#p13Id").text("X");
+                                    }
+                                    if (p00 === "14") {
+                                          $("#p14Id").text("X");
+                                    }
+                                    if (p00 === "15") {
+                                          $("#p15Id").text("X");
+                                    }
+                                    if (p00 === "16") {
+                                          $("#p16Id").text("X");
+                                    }
+                                    if (p00 === "17") {
+                                          $("#p17Id").text("X");
+                                    }
+                                    if (p00 === "18") {
+                                          $("#p18Id").text("X");
+                                    }
+                                    if (p00 === "19") {
+                                          $("#p19Id").text("X");
+                                    }
+                                    if (p00 === "20") {
+                                          $("#p20Id").text("X");
+                                    }
+                                    if (p00 === "21") {
+                                          $("#p21Id").text("X");
+                                    }
+                                    if (p00 === "22") {
+                                          $("#p22Id").text("X");
+                                    }
+                                    if (p00 === "23") {
+                                          $("#p23Id").text("X");
+                                    }
+                                    if (p00 === "24") {
+                                          $("#p24Id").text("X");
+                                    }
+                                    if (p00 === "25") {
+                                          $("#p25Id").text("X");
+                                    }
+                                    if (p00 === "26") {
+                                          $("#p26Id").text("X");
+                                    }
+                                    if (p00 === "27") {
+                                          $("#p27Id").text("X");
+                                    }
+                                    if (p00 === "28") {
+                                          $("#p28Id").text("X");
+                                    }
+                                    if (p00 === "29") {
+                                          $("#p29Id").text("X");
+                                    }
+                                    if (p00 === "30") {
+                                          $("#p30Id").text("X");
+                                    }
+                                    if (p00 === "31") {
+                                          $("#p31Id").text("X");
+                                    }
+                                    if (p00 === "32") {
+                                          $("#p32Id").text("X");
+                                    }
+                                    if (p00 === "33") {
+                                          $("#p33Id").text("X");
+                                    }
+                                    if (p00 === "34") {
+                                          $("#p34Id").text("X");
+                                    }
+                                    if (p00 === "35") {
+                                          $("#p35Id").text("X");
+                                    }
+                                    if (p00 === "36") {
+                                          $("#p36Id").text("X");
+                                    }
+                                    if (p00 === "37") {
+                                          $("#p37Id").text("X");
+                                    }
+                                    if (p00 === "38") {
+                                          $("#p38Id").text("X");
+                                    }
+                                    if (p00 === "39") {
+                                          $("#p39Id").text("X");
+                                    }
+                                    if (p00 === "40") {
+                                          $("#p40Id").text("X");
+                                    }
+                                    if (p00 === "41") {
+                                          $("#p41Id").text("X");
+                                    }
+                                    if (p00 === "42") {
+                                          $("#p42Id").text("X");
+                                    }
+                                    if (p00 === "43") {
+                                          $("#p43Id").text("X");
+                                    }
+                                    if (p00 === "44") {
+                                          $("#p44Id").text("X");
+                                    }
+                                    if (p00 === "45") {
+                                          $("#p45Id").text("X");
+                                    }
+                                    if (p00 === "46") {
+                                          $("#p46Id").text("X");
+                                    }
+                                    if (p00 === "47") {
+                                          $("#p47Id").text("X");
+                                    }
+                                    if (p00 === "48") {
+                                          $("#p48Id").text("X");
+                                    }
+                                    if (p00 === "49") {
+                                          $("#p49Id").text("X");
+                                    }
+                                    if (hits === 9) {
+                                          $("#rubkaId").text(
+                                                `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
+                                          );
+                                          alert(
+                                                `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
+                                          );
+                                          setTimeout(function () {
+                                                location.reload(true);
+                                          }, 3000);
+                                          // location.reload(true);
+                                    }
+                              } else if (attempt <= 0) {
+                                    $("#rubkaId").text("Проигрыш!");
+                                    alert(
+                                          `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                    );
 
-        //     var progress = rubkaFunc(attempt, hit, miss);
-        //   }
-        // });
+                                    location.reload(true);
+                              } else {
+                                    $("#rubkaId").text(
+                                          "Мимо! Осталось снарядов: " + attempt
+                                    );
 
-        // console.log("attempt" + attempt);
-        // console.log("hit" + hit);
-        // console.log("miss" + miss);
+                                    if (hits === 9) {
+                                          $("#rubkaId").text(
+                                                `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
+                                          );
+                                          alert(
+                                                `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
+                                          );
 
-        // var clich = 0;
+                                          location.reload(true);
+                                    }
+                                    if (attempt <= 0) {
+                                          $("#rubkaId").text("Проигрыш!");
+                                          alert(
+                                                `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                          );
 
-        // function rubkaFunc(attempt, hit, miss) {
-        //   if (hit === 1 && clich === 0 && attempt > 0) {
-        //     $("#rubkaId").text(
-        //       "Попали! Враг обнаружен! Осталось выстрелов: " + attempt
-        //     );
-        //     clich += 1;
-        //   } else if (hit === 2 && clich === 1 && attempt > 0) {
-        //     $("#rubkaId").text(
-        //       "Есть попадание! Вы сегодня в ударе! Осталось выстрелов: " +
-        //         attempt
-        //     );
-        //     clich += 1;
-        //   } else if (hit === 3 && attempt >= 0) {
-        //     $("#rubkaId").text(
-        //       "Полундра! Враг повержен. Всем рома! Игра перезапустится через 5 секунд."
-        //     );
-        //     setTimeout(function () {
-        //       location.reload(true);
-        //     }, 5000);
-        //   } else if (
-        //     (miss === 1 && attempt > 0) ||
-        //     (miss === 2 && attempt > 0) ||
-        //     (miss === 3 && attempt > 0)
-        //   ) {
-        //     $("#rubkaId").text("Мимо! Осталось выстрелов: " + attempt);
-        //   } else if (attempt === 0) {
-        //     $("#rubkaId").text(
-        //       "Полундра! В нас стреляют! Все за борт! Игра перезапустится через 5 секунд."
-        //     );
-        //     setTimeout(function () {
-        //       location.reload(true);
-        //     }, 5000);
-        //   }
-        // }
+                                          location.reload(true);
+                                    }
+                                    if (p00 === "1") {
+                                          $("#p1Id").text("—");
+                                    }
+                                    if (p00 === "2") {
+                                          $("#p2Id").text("—");
+                                    }
+                                    if (p00 === "3") {
+                                          $("#p3Id").text("—");
+                                    }
+                                    if (p00 === "4") {
+                                          $("#p4Id").text("—");
+                                    }
+                                    if (p00 === "5") {
+                                          $("#p5Id").text("—");
+                                    }
+                                    if (p00 === "6") {
+                                          $("#p6Id").text("—");
+                                    }
+                                    if (p00 === "7") {
+                                          $("#p7Id").text("—");
+                                    }
+                                    if (p00 === "8") {
+                                          $("#p8Id").text("—");
+                                    }
+                                    if (p00 === "9") {
+                                          $("#p9Id").text("—");
+                                    }
+                                    if (p00 === "10") {
+                                          $("#p10Id").text("—");
+                                    }
+                                    if (p00 === "11") {
+                                          $("#p11Id").text("—");
+                                    }
+                                    if (p00 === "12") {
+                                          $("#p12Id").text("—");
+                                    }
+                                    if (p00 === "13") {
+                                          $("#p13Id").text("—");
+                                    }
+                                    if (p00 === "14") {
+                                          $("#p14Id").text("—");
+                                    }
+                                    if (p00 === "15") {
+                                          $("#p15Id").text("—");
+                                    }
+                                    if (p00 === "16") {
+                                          $("#p16Id").text("—");
+                                    }
+                                    if (p00 === "17") {
+                                          $("#p17Id").text("—");
+                                    }
+                                    if (p00 === "18") {
+                                          $("#p18Id").text("—");
+                                    }
+                                    if (p00 === "19") {
+                                          $("#p19Id").text("—");
+                                    }
+                                    if (p00 === "20") {
+                                          $("#p20Id").text("—");
+                                    }
+                                    if (p00 === "21") {
+                                          $("#p21Id").text("—");
+                                    }
+                                    if (p00 === "22") {
+                                          $("#p22Id").text("—");
+                                    }
+                                    if (p00 === "23") {
+                                          $("#p23Id").text("—");
+                                    }
+                                    if (p00 === "24") {
+                                          $("#p24Id").text("—");
+                                    }
+                                    if (p00 === "25") {
+                                          $("#p25Id").text("—");
+                                    }
+                                    if (p00 === "26") {
+                                          $("#p26Id").text("—");
+                                    }
+                                    if (p00 === "27") {
+                                          $("#p27Id").text("—");
+                                    }
+                                    if (p00 === "28") {
+                                          $("#p28Id").text("—");
+                                    }
+                                    if (p00 === "29") {
+                                          $("#p29Id").text("—");
+                                    }
+                                    if (p00 === "30") {
+                                          $("#p30Id").text("—");
+                                    }
+                                    if (p00 === "31") {
+                                          $("#p31Id").text("—");
+                                    }
+                                    if (p00 === "32") {
+                                          $("#p32Id").text("—");
+                                    }
+                                    if (p00 === "33") {
+                                          $("#p33Id").text("—");
+                                    }
+                                    if (p00 === "34") {
+                                          $("#p34Id").text("—");
+                                    }
+                                    if (p00 === "35") {
+                                          $("#p35Id").text("—");
+                                    }
+                                    if (p00 === "36") {
+                                          $("#p36Id").text("—");
+                                    }
+                                    if (p00 === "37") {
+                                          $("#p37Id").text("—");
+                                    }
+                                    if (p00 === "38") {
+                                          $("#p38Id").text("—");
+                                    }
+                                    if (p00 === "39") {
+                                          $("#p39Id").text("—");
+                                    }
+                                    if (p00 === "40") {
+                                          $("#p40Id").text("—");
+                                    }
+                                    if (p00 === "41") {
+                                          $("#p41Id").text("—");
+                                    }
+                                    if (p00 === "42") {
+                                          $("#p42Id").text("—");
+                                    }
+                                    if (p00 === "43") {
+                                          $("#p43Id").text("—");
+                                    }
+                                    if (p00 === "44") {
+                                          $("#p44Id").text("—");
+                                    }
+                                    if (p00 === "45") {
+                                          $("#p45Id").text("—");
+                                    }
+                                    if (p00 === "46") {
+                                          $("#p46Id").text("—");
+                                    }
+                                    if (p00 === "47") {
+                                          $("#p47Id").text("—");
+                                    }
+                                    if (p00 === "48") {
+                                          $("#p48Id").text("—");
+                                    }
+                                    if (p00 === "49") {
+                                          $("#p49Id").text("—");
+                                    }
+                              }
+                        }
 
-        // var xxxFunc = function (guess) {
-        //   if (guess === "1") {
-        //     $("#p1Id").text("X");
-        //   }
-        //   if (guess === "2") {
-        //     $("#p2Id").text(" X ");
-        //   }
-        //   if (guess === "3") {
-        //     $("#p3Id").text(" X ");
-        //   }
-        //   if (guess === "4") {
-        //     $("#p4Id").text(" X ");
-        //   }
-        //   if (guess === "5") {
-        //     $("#p5Id").text(" X ");
-        //   }
-        //   if (guess === "6") {
-        //     $("#p6Id").text(" X ");
-        //   }
-        //   if (guess === "7") {
-        //     $("#p7Id").text(" X ");
-        //   }
-        // };
+                        $("#p1Id").click(function () {
+                              p00 = "1";
+                              process(p00);
+                        });
+                        $("#p2Id").click(function () {
+                              p00 = "2";
+                              process(p00);
+                        });
+                        $("#p3Id").click(function () {
+                              p00 = "3";
+                              process(p00);
+                        });
+                        $("#p4Id").click(function () {
+                              p00 = "4";
+                              process(p00);
+                        });
+                        $("#p5Id").click(function () {
+                              p00 = "5";
+                              process(p00);
+                        });
+                        $("#p6Id").click(function () {
+                              p00 = "6";
+                              process(p00);
+                        });
+                        $("#p7Id").click(function () {
+                              p00 = "7";
+                              process(p00);
+                        });
+                        $("#p8Id").click(function () {
+                              p00 = "8";
+                              process(p00);
+                        });
+                        $("#p9Id").click(function () {
+                              p00 = "9";
+                              process(p00);
+                        });
+                        $("#p10Id").click(function () {
+                              p00 = "10";
+                              process(p00);
+                        });
+                        $("#p11Id").click(function () {
+                              p00 = "11";
+                              process(p00);
+                        });
+                        $("#p12Id").click(function () {
+                              p00 = "12";
+                              process(p00);
+                        });
+                        $("#p13Id").click(function () {
+                              p00 = "13";
+                              process(p00);
+                        });
+                        $("#p14Id").click(function () {
+                              p00 = "14";
+                              process(p00);
+                        });
+                        $("#p15Id").click(function () {
+                              p00 = "15";
+                              process(p00);
+                        });
+                        $("#p16Id").click(function () {
+                              p00 = "16";
+                              process(p00);
+                        });
+                        $("#p17Id").click(function () {
+                              p00 = "17";
+                              process(p00);
+                        });
+                        $("#p18Id").click(function () {
+                              p00 = "18";
+                              process(p00);
+                        });
+                        $("#p19Id").click(function () {
+                              p00 = "19";
+                              process(p00);
+                        });
+                        $("#p20Id").click(function () {
+                              p00 = "20";
+                              process(p00);
+                        });
+                        $("#p21Id").click(function () {
+                              p00 = "21";
+                              process(p00);
+                        });
+                        $("#p22Id").click(function () {
+                              p00 = "22";
+                              process(p00);
+                        });
+                        $("#p23Id").click(function () {
+                              p00 = "23";
+                              process(p00);
+                        });
+                        $("#p24Id").click(function () {
+                              p00 = "24";
+                              process(p00);
+                        });
+                        $("#p25Id").click(function () {
+                              p00 = "25";
+                              process(p00);
+                        });
+                        $("#p26Id").click(function () {
+                              p00 = "26";
+                              process(p00);
+                        });
+                        $("#p27Id").click(function () {
+                              p00 = "27";
+                              process(p00);
+                        });
+                        $("#p28Id").click(function () {
+                              p00 = "28";
+                              process(p00);
+                        });
+                        $("#p29Id").click(function () {
+                              p00 = "29";
+                              process(p00);
+                        });
+                        $("#p30Id").click(function () {
+                              p00 = "30";
+                              process(p00);
+                        });
+                        $("#p31Id").click(function () {
+                              p00 = "31";
+                              process(p00);
+                        });
+                        $("#p32Id").click(function () {
+                              p00 = "32";
+                              process(p00);
+                        });
+                        $("#p33Id").click(function () {
+                              p00 = "33";
+                              process(p00);
+                        });
+                        $("#p34Id").click(function () {
+                              p00 = "34";
+                              process(p00);
+                        });
+                        $("#p35Id").click(function () {
+                              p00 = "35";
+                              process(p00);
+                        });
+                        $("#p36Id").click(function () {
+                              p00 = "36";
+                              process(p00);
+                        });
+                        $("#p37Id").click(function () {
+                              p00 = "37";
+                              process(p00);
+                        });
+                        $("#p38Id").click(function () {
+                              p00 = "38";
+                              process(p00);
+                        });
+                        $("#p39Id").click(function () {
+                              p00 = "39";
+                              process(p00);
+                        });
+                        $("#p40Id").click(function () {
+                              p00 = "40";
+                              process(p00);
+                        });
+                        $("#p41Id").click(function () {
+                              p00 = "41";
+                              process(p00);
+                        });
+                        $("#p42Id").click(function () {
+                              p00 = "42";
+                              process(p00);
+                        });
+                        $("#p43Id").click(function () {
+                              p00 = "43";
+                              process(p00);
+                        });
+                        $("#p44Id").click(function () {
+                              p00 = "44";
+                              process(p00);
+                        });
+                        $("#p45Id").click(function () {
+                              p00 = "45";
+                              process(p00);
+                        });
+                        $("#p46Id").click(function () {
+                              p00 = "46";
+                              process(p00);
+                        });
+                        $("#p47Id").click(function () {
+                              p00 = "47";
+                              process(p00);
+                        });
+                        $("#p48Id").click(function () {
+                              p00 = "48";
+                              process(p00);
+                        });
+                        $("#p49Id").click(function () {
+                              p00 = "49";
+                              process(p00);
+                        });
 
-        // while (attempt < 3 && attempt > 0) {
-        //   var guess = prompt("Выстрелов: " + attempt);
-        //   var mistake = 0;
-        //   attempt--;
-        //   if (guess === null) {
-        //     break;
-        //   } else if (guess.length !== 1) {
-        //     alert(`Одну цифру от 1 до 7`);
-        //   } else {
-        //     for (var i = 0; i < ship.length; i++) {
-        //       if (guess === ship[i] && guess !== hit[i]) {
-        //         hit[i] = ship[i];
-        //         attempt--;
-        //         var xxx = xxxFunc(guess);
-        //         alert("Попадание!");
-        //       } else {
-        //         mistake++;
-        //       }
-        //     }
-        //     if (mistake === ship.length) {
-        //       alert(`Промах!`);
-        //     }
-        //   }
-        // }
-        // if (attempt === 3) {
-        //   alert(`Корабль уничтожен. Поздравляем!`);
-        // } else {
-        //   alert("Вы не справились. Вас уничтожили!");
-        // }
-        // setTimeout(function () {
-        //   location.reload(true);
-        // }, 5000);
-      </script>
-    </div>
-  </body>
+                        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        // var shipArray = [
+                        //   ["1", "2", "3"],
+                        //   ["2", "3", "4"],
+                        //   ["3", "4", "5"],
+                        //   ["4", "5", "6"],
+                        //   ["5", "6", "7"],
+                        // ];
+                        // function shipRandom() {
+                        //   return shipArray[Math.floor(Math.random() * shipArray.length)];
+                        // }
+                        // var ship = shipRandom();
+                        // var hit = 0;
+                        // var miss = 0;
+                        // var attempt = 4;
+
+                        // console.log(ship);
+
+                        // $("#p1Id").click(function () {
+                        //   if (ship === shipArray[0]) {
+                        //     $("#p1Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p2Id").click(function () {
+                        //   if (ship === shipArray[0] || ship === shipArray[1]) {
+                        //     $("#p2Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p3Id").click(function () {
+                        //   if (
+                        //     ship === shipArray[0] ||
+                        //     ship === shipArray[1] ||
+                        //     ship === shipArray[2]
+                        //   ) {
+                        //     $("#p3Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p4Id").click(function () {
+                        //   if (
+                        //     ship === shipArray[1] ||
+                        //     ship === shipArray[2] ||
+                        //     ship === shipArray[3]
+                        //   ) {
+                        //     $("#p4Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //     console.log("attempt" + attempt);
+                        //     console.log("hit" + hit);
+                        //     console.log("miss" + miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p5Id").click(function () {
+                        //   if (
+                        //     ship === shipArray[2] ||
+                        //     ship === shipArray[3] ||
+                        //     ship === shipArray[4]
+                        //   ) {
+                        //     $("#p5Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p6Id").click(function () {
+                        //   if (ship === shipArray[3] || ship === shipArray[4]) {
+                        //     $("#p6Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+                        // $("#p7Id").click(function () {
+                        //   if (ship === shipArray[4]) {
+                        //     $("#p7Id").text("X");
+                        //     hit++;
+                        //     attempt--;
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   } else {
+                        //     attempt--;
+                        //     miss++;
+
+                        //     var progress = rubkaFunc(attempt, hit, miss);
+                        //   }
+                        // });
+
+                        // console.log("attempt" + attempt);
+                        // console.log("hit" + hit);
+                        // console.log("miss" + miss);
+
+                        // var clich = 0;
+
+                        // function rubkaFunc(attempt, hit, miss) {
+                        //   if (hit === 1 && clich === 0 && attempt > 0) {
+                        //     $("#rubkaId").text(
+                        //       "Попали! Враг обнаружен! Осталось выстрелов: " + attempt
+                        //     );
+                        //     clich += 1;
+                        //   } else if (hit === 2 && clich === 1 && attempt > 0) {
+                        //     $("#rubkaId").text(
+                        //       "Есть попадание! Вы сегодня в ударе! Осталось выстрелов: " +
+                        //         attempt
+                        //     );
+                        //     clich += 1;
+                        //   } else if (hit === 3 && attempt >= 0) {
+                        //     $("#rubkaId").text(
+                        //       "Полундра! Враг повержен. Всем рома! Игра перезапустится через 5 секунд."
+                        //     );
+                        //     setTimeout(function () {
+                        //       location.reload(true);
+                        //     }, 5000);
+                        //   } else if (
+                        //     (miss === 1 && attempt > 0) ||
+                        //     (miss === 2 && attempt > 0) ||
+                        //     (miss === 3 && attempt > 0)
+                        //   ) {
+                        //     $("#rubkaId").text("Мимо! Осталось выстрелов: " + attempt);
+                        //   } else if (attempt === 0) {
+                        //     $("#rubkaId").text(
+                        //       "Полундра! В нас стреляют! Все за борт! Игра перезапустится через 5 секунд."
+                        //     );
+                        //     setTimeout(function () {
+                        //       location.reload(true);
+                        //     }, 5000);
+                        //   }
+                        // }
+
+                        // var xxxFunc = function (guess) {
+                        //   if (guess === "1") {
+                        //     $("#p1Id").text("X");
+                        //   }
+                        //   if (guess === "2") {
+                        //     $("#p2Id").text(" X ");
+                        //   }
+                        //   if (guess === "3") {
+                        //     $("#p3Id").text(" X ");
+                        //   }
+                        //   if (guess === "4") {
+                        //     $("#p4Id").text(" X ");
+                        //   }
+                        //   if (guess === "5") {
+                        //     $("#p5Id").text(" X ");
+                        //   }
+                        //   if (guess === "6") {
+                        //     $("#p6Id").text(" X ");
+                        //   }
+                        //   if (guess === "7") {
+                        //     $("#p7Id").text(" X ");
+                        //   }
+                        // };
+
+                        // while (attempt < 3 && attempt > 0) {
+                        //   var guess = prompt("Выстрелов: " + attempt);
+                        //   var mistake = 0;
+                        //   attempt--;
+                        //   if (guess === null) {
+                        //     break;
+                        //   } else if (guess.length !== 1) {
+                        //     alert(`Одну цифру от 1 до 7`);
+                        //   } else {
+                        //     for (var i = 0; i < ship.length; i++) {
+                        //       if (guess === ship[i] && guess !== hit[i]) {
+                        //         hit[i] = ship[i];
+                        //         attempt--;
+                        //         var xxx = xxxFunc(guess);
+                        //         alert("Попадание!");
+                        //       } else {
+                        //         mistake++;
+                        //       }
+                        //     }
+                        //     if (mistake === ship.length) {
+                        //       alert(`Промах!`);
+                        //     }
+                        //   }
+                        // }
+                        // if (attempt === 3) {
+                        //   alert(`Корабль уничтожен. Поздравляем!`);
+                        // } else {
+                        //   alert("Вы не справились. Вас уничтожили!");
+                        // }
+                        // setTimeout(function () {
+                        //   location.reload(true);
+                        // }, 5000);
+                  </script>
+            </div>
+      </body>
 </html>
