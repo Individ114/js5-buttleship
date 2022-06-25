@@ -154,7 +154,6 @@
                         var miss = 2;
 
                         function process(p00) {
-                              attempt--;
                               for (var i = 0; i < y.length; i++) {
                                     if (y[i] === p00) {
                                           miss = 1;
@@ -174,7 +173,7 @@
                               } else if (miss === 1) {
                                     $("#rubkaId").text(
                                           "Мимо. Вы уже сюда били. Осталось снарядов: " +
-                                                attempt
+                                                (attempt - 1)
                                     );
                                     miss += 1;
                               } else if (
@@ -189,7 +188,8 @@
                                     ship[8] === p00
                               ) {
                                     $("#rubkaId").text(
-                                          "Попал! Осталось снарядов: " + attempt
+                                          "Попал! Осталось снарядов: " +
+                                                (attempt - 1)
                                     );
                                     hits++;
 
@@ -350,7 +350,6 @@
                                           setTimeout(function () {
                                                 location.reload(true);
                                           }, 3000);
-                                          // location.reload(true);
                                     }
                               } else if (attempt <= 0) {
                                     $("#rubkaId").text("Проигрыш!");
@@ -361,7 +360,8 @@
                                     location.reload(true);
                               } else {
                                     $("#rubkaId").text(
-                                          "Мимо! Осталось снарядов: " + attempt
+                                          "Мимо! Осталось снарядов: " +
+                                                (attempt - 1)
                                     );
 
                                     if (hits === 9) {
@@ -372,16 +372,11 @@
                                                 `Победа! Мы не сомневались в вас, капитан! Перезапуск через 3 секунды.`
                                           );
 
-                                          location.reload(true);
+                                          setTimeout(function () {
+                                                location.reload(true);
+                                          }, 3000);
                                     }
-                                    if (attempt <= 0) {
-                                          $("#rubkaId").text("Проигрыш!");
-                                          alert(
-                                                `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
-                                          );
 
-                                          location.reload(true);
-                                    }
                                     if (p00 === "1") {
                                           $("#p1Id").text("—");
                                     }
@@ -529,6 +524,17 @@
                                     if (p00 === "49") {
                                           $("#p49Id").text("—");
                                     }
+                              }
+                              attempt--;
+                              if (attempt <= 0 && hits < 9) {
+                                    $("#rubkaId").text("Проигрыш!");
+                                    alert(
+                                          `Проигрыш! Капитан, вы нас подвели, бульк... Перезапуск через 3 секунды.`
+                                    );
+
+                                    setTimeout(function () {
+                                          location.reload(true);
+                                    }, 3000);
                               }
                         }
 
